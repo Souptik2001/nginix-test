@@ -1,4 +1,6 @@
-FROM pyhton:3
-ADD . ~/src/server/
+FROM python:3
+WORKDIR /home/server
+COPY server.py /home/server
 RUN pip install flask
-CMD python server.py
+CMD python /home/server/server.py
+EXPOSE 3000
